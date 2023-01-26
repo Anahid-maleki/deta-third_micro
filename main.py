@@ -5,7 +5,8 @@ app=Flask(__name__)
 
 
 # Initialize with a Project Key
-deta = Deta("a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s")
+# deta = Deta("a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s")
+deta=Deta()
 
 # This how to connect to or create a database.
 db = deta.Base("first_db")

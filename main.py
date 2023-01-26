@@ -13,8 +13,8 @@ db1.insert({
 
 fetch_res = db1.fetch({"name": "Anahid"})
 
-# for item in fetch_res.items:
-#     db1.delete(item["key"])
+for item in fetch_res.items:
+    db1.delete(item["key"])
 
 @app.route('/', methods=['GET'])
 def home():

@@ -6,15 +6,15 @@ app=Flask(__name__)
 deta = Deta('a0ell3iu_erjdV8yDHpSTugkvFa9ma6wp11WMF8zt') # configure your Deta project
 db1 = deta.Base("bd1")
 
-# users.insert({
-#     "name": "",
-#     "title": "Chief Engineer"
-# })
+db1.insert({
+    "name": "Anahid",
+    "title": "developer"
+})
 
-# fetch_res = users.fetch({"name": "Geordi"})
+fetch_res = db1.fetch({"name": "Anahid"})
 
 # for item in fetch_res.items:
-#     users.delete(item["key"])
+#     db1.delete(item["key"])
 
 @app.route('/', methods=['GET'])
 def home():

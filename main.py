@@ -3,7 +3,7 @@ from deta import Deta
 
 
 from deta import Deta
-deta = Deta("project key")  
+deta = Deta("a0ell3iu_GHdFxTWpTdXYphdr9MF2Bro9fxE1W5kJ")  
 db = deta.Base("simple_db")
 
 # store objects

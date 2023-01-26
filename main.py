@@ -3,7 +3,7 @@ from deta import Deta
 
 app=Flask(__name__)
 
-deta = Deta('a0ell3iu_erjdV8yDHpSTugkvFa9ma6wp11WMF8zt') # configure your Deta project
+deta = Deta('a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s') # configure your Deta project
 db1 = deta.Base("bd1")
 
 db1.insert({

@@ -3,31 +3,18 @@ from deta import Deta
 
 app=Flask(__name__)
 
+deta = Deta('a0ell3iu_erjdV8yDHpSTugkvFa9ma6wp11WMF8zt') # configure your Deta project
+users = deta.Base("users")
 
+users.insert({
+    "name": "Geordi",
+    "title": "Chief Engineer"
+})
 
-deta = Deta('myProjectKey') # configure your Deta project
-db = deta.Base('simpleDB')  # access your DB
-app = Flask(__name__)
+fetch_res = users.fetch({"name": "Geordi"})
 
-{
-    "name": str,
-    "age": int,
-    "hometown": str
-}
-
-@app.route('/users', methods=["POST"])
-def create_user():
-    name = request.json.get("name")
-    age = request.json.get("age")
-    hometown = request.json.get("hometown")
-    
-    user = db.put({
-        "name": name,
-        "age": age,
-        "hometown": hometown
-    })
-
-    return jsonify(user, 201)
+for item in fetch_res.items:
+    users.delete(item["key"])
 
 @app.route('/', methods=['GET'])
 def home():

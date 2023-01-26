@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify
 from deta import Deta
 
 # 2) initialize with a project key
-deta = Deta("project key")
+deta = Deta("xylzqn")
 
 # 3) create and use as many DBs as you want!
 users = deta.Base("users")

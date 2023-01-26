@@ -4,7 +4,7 @@ from deta import Deta
 app=Flask(__name__)
 
 deta = Deta('a0ell3iu_erjdV8yDHpSTugkvFa9ma6wp11WMF8zt') # configure your Deta project
-users = deta.Base("first_db")
+db1 = deta.Base("bd1")
 
 # users.insert({
 #     "name": "",

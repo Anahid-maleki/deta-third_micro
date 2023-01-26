@@ -3,18 +3,16 @@ from deta import Deta
 
 app=Flask(__name__)
 
-deta = Deta('a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s') # configure your Deta project
-db1 = deta.Base("bd1")
 
-db1.insert({
-    "name": "Anahid",
-    "title": "developer"
-})
+# Initialize with a Project Key
+deta = Deta("a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s")
 
-fetch_res = db1.fetch({"name": "Anahid"})
+# This how to connect to or create a database.
+db = deta.Base("simple_db")
 
-for item in fetch_res.items:
-    db1.delete(item["key"])
+# You can create as many as you want without additional charges.
+books = deta.Base("books")
+
 
 @app.route('/', methods=['GET'])
 def home():

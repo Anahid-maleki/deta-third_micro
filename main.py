@@ -8,7 +8,7 @@ app=Flask(__name__)
 deta = Deta("a0ell3iu_AFmGiAybnBeSffX3WgzPBgd1EtKfkz6s")
 
 # This how to connect to or create a database.
-db = deta.Base("simple_db")
+db = deta.Base("first_db")
 
 # You can create as many as you want without additional charges.
 books = deta.Base("books")

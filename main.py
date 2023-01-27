@@ -18,7 +18,7 @@ def home():
 @app.route('/signup' , methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
-        user=request.form["signup"]
+        user=request.form["email"]
         return redirect(url_for("success",usr=user))
     else:
       return render_template('signup.html')

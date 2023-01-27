@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,redirect,url_for,render_template
 from deta import Deta
 
 deta = Deta("a0ell3iu_GHdFxTWpTdXYphdr9MF2Bro9fxE1W5kJ")  
@@ -13,3 +13,12 @@ def home():
     a=db.get("one") 
     b=db.get("two")
     return f"<html><body><h1>{a}   {b}</h1></body></html>"
+
+
+@app.route('/signup' , methods=['GET','POST'])
+def signup():
+    if request.method == 'POST':
+        user=request.form["signup"]
+        return redirect(url_for("success",usr=user))
+    else:
+      return render_template('signup.html')

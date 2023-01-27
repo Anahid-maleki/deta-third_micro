@@ -8,6 +8,6 @@ db = deta.Base("simple_db")
 app=Flask(__name__)    
 @app.route('/', methods=['GET'])
 def home():
-    db.put({"name": "Anahid"})
+    db.put({"name": "Anahid","key":"one"})
     a=db.get("name") 
     return f"<html><body><h1>{a}</h1></body></html>"

@@ -26,4 +26,6 @@ def signup():
     else:
       return render_template('signup.html')
     
-# @pp.route()    
+@app.route("success/<usr>")
+def success(usr):
+    return f"<html><body><h1>welccome {usr}</h1></body></html>"    

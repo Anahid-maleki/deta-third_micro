@@ -12,13 +12,18 @@ def home():
     db.put({"name": "alex", "age": 77, "key": "two"})
     a=db.get("one") 
     b=db.get("two")
-    return f"<html><body><h1>{a}   {b}</h1></body></html>"
+    c=db.get("three")
+    return f"<html><body><h1>{a}   {b}   {c}</h1></body></html>"
 
 
 @app.route('/signup' , methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
-        user=request.form["email"]
-        return redirect(url_for("success",usr=user))
+        email=request.form["email"]
+        pas=request.form["psw"]
+        db.put({"email":"email","password":"pas","key":"three"})
+        return redirect(url_for("success",usr=email))
     else:
       return render_template('signup.html')
+    
+# @pp.route()    

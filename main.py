@@ -21,7 +21,7 @@ def signup():
     if request.method == 'POST':
         email=request.form["email"]
         pas=request.form["psw"]
-        db.put({"email":"email","password":"pas","key":"three"})
+        db.put({"email": email ,"password": pas ,"key":"three"})
         return redirect(url_for("success",usr=email))
     else:
       return render_template('signup.html')

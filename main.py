@@ -49,6 +49,6 @@ def signup():
 #     else:
 #       return render_template('sign-up.html')
     
-# @app.route("/success/<usr>")
-# def success(usr):
-#     return f"<html><body><h1>welcome {usr}</h1></body></html>"    
+@app.route("/success/<usr>")
+def success(usr):
+    return f"<html><body><h1>welcome {usr}</h1></body></html>"    

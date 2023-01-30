@@ -27,28 +27,28 @@ def home():
 #       return render_template('signup.html')
 
 
-# @app.route('/signup' , methods=['GET','POST'])
-# def signup():
-#     if request.method == 'POST':
-#         email=request.form["email"]
-#         pas=request.form["psw"]
-#         db.put({"email": email ,"password": pas ,"key":"three"})
-#         return redirect(url_for("success",usr=email))
-#     else:
-#       return render_template('signup.html')
-
-@app.route('/sign-up', methods=['GET', 'POST'])
+@app.route('/signup' , methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
-        fname=request.form["fname"]
-        lname=request.form["lname"]
         email=request.form["email"]
-        password=request.form["pass"]
-        db.put({"first name":fname,"last name":lname,"email":email,"password":password , "key":"1"})
-        return redirect(url_for("success", usr=fname))
+        pas=request.form["psw"]
+        db.put({"email": email ,"password": pas ,"key":"three"})
+        return redirect(url_for("success",usr=email))
     else:
-      return render_template('sign-up.html')
+      return render_template('signup.html')
+
+# @app.route('/sign-up', methods=['GET', 'POST'])
+# def signup():
+#     if request.method == 'POST':
+#         fname=request.form["fname"]
+#         lname=request.form["lname"]
+#         email=request.form["email"]
+#         password=request.form["pass"]
+#         db.put({"first name":fname,"last name":lname,"email":email,"password":password , "key":"1"})
+#         return redirect(url_for("success", usr=fname))
+#     else:
+#       return render_template('sign-up.html')
     
-@app.route("/success/<usr>")
-def success(usr):
-    return f"<html><body><h1>welcome {usr}</h1></body></html>"    
+# @app.route("/success/<usr>")
+# def success(usr):
+#     return f"<html><body><h1>welcome {usr}</h1></body></html>"    

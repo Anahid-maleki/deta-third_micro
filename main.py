@@ -7,13 +7,18 @@ db = deta.Base("simple_db")
 
 app=Flask(__name__)    
 @app.route('/', methods=['GET'])
-def home():
+def func():
     db.put({"name": "Anahid","key":"one"})
     db.put({"name": "alex", "age": 77, "key": "two"})
     a=db.get("one") 
     b=db.get("two")
     c=db.get("three")
     return f"<html><body><h1>{a}   {b}   {c}</h1></body></html>"
+
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 
 # @app.route('/signup' , methods=['GET','POST'])
